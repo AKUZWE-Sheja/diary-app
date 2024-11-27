@@ -1,0 +1,7 @@
+Flask
+Flask-SQLAlchemy
+flask-bcrypt 
+flask-wtf 
+flask-login 
+psycopg2-binary
+email-validator

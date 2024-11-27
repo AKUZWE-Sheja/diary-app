@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-center">
+  <div class="card shadow-sm p-4" style="max-width: 600px; width: 100%;">
+    <h4 class="card-title text-center mb-4">Add Note</h4>
+    <form method="POST" action="{{ url_for('add_note') }}">
+      {{ form.hidden_tag() }}
+      <div class="mb-3">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control") }}
+      </div>
+      <div class="mb-3">
+        {{ form.content.label(class="form-label") }}
+        {{ form.content(class="form-control", rows=4) }}
+      </div>
+      {{ form.submit(class="btn btn-success w-100") }}
+    </form>
+  </div>
+</div>
+{% endblock %}
