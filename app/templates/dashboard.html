@@ -9,11 +9,14 @@
     {% for note in notes %}
       <div class="col">
         <div class="card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">{{ note.title }}</h5>
-            <p class="card-text">{{ note.content[:100] }}...</p>
-            <p class="text-muted small">Created: {{ note.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
-          </div>
+          <a href="{{ url_for('get_note', note_id=note.id) }}" class="stretched-link" style="text-decoration: none; color: inherit;">
+            <div class="card-body">
+              <h5 class="card-title">{{ note.title }}</h5>
+              <p class="card-text">{{ note.content[:100] }}...</p>
+              <p class="text-muted small">Created: {{ note.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+            </div>
+          </a>
+        </div>        
         </div>
       </div>
     {% endfor %}
